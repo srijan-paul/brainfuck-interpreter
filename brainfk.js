@@ -100,12 +100,15 @@ rl.question('Enter your brainfuck code : \n', (code) => {
     if (code.includes(',')) {
         rl.question('Enter input stream : \n', (e) => {
             input = e.split('');
+            console.log('Output : \n');
+            interpret(code, input);
             rl.close();
         })
-    }
-
-    console.log('Output : \n');
-    interpret(code, input);
+    } else {
+        console.log('Output : \n');
+        interpret(code, input);
+        rl.close();
+    }   
 
 })
 
